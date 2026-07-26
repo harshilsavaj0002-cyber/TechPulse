@@ -1,0 +1,242 @@
+/* Custom styles for TechPulse blog */
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom focus styles */
+.focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+}
+
+/* Custom transitions */
+.transition-all {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Custom hover effects */
+.hover-lift {
+    transition: transform 0.2s ease-in-out;
+}
+
+.hover-lift:hover {
+    transform: translateY(-2px);
+}
+
+/* Custom text selection */
+::selection {
+    background-color: #3B82F6;
+    color: white;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Custom form styles */
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #3B82F6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Custom button styles */
+.btn-primary {
+    @apply bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-all;
+}
+
+.btn-secondary {
+    @apply bg-gray-200 text-gray-800 px-6 py-2 rounded-lg hover:bg-gray-300 transition-all;
+}
+
+/* Custom card styles */
+.card {
+    @apply bg-white rounded-lg shadow-lg overflow-hidden transition-all;
+}
+
+.card:hover {
+    @apply shadow-xl;
+}
+
+/* Custom link styles */
+.link-primary {
+    @apply text-blue-600 hover:text-blue-700 transition-colors;
+}
+
+/* Custom heading styles */
+.heading-gradient {
+    background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Custom animation for loading states */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: .5;
+    }
+}
+
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Custom mobile menu animation */
+.mobile-menu-enter {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+.mobile-menu-enter-active {
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+}
+
+.mobile-menu-exit {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.mobile-menu-exit-active {
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+}
+
+/* Custom image styles */
+.img-cover {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+/* Custom container styles */
+.container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Custom grid styles */
+.grid-auto-fit {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Custom spacing utilities */
+.space-y-custom > * + * {
+    margin-top: 2rem;
+}
+
+/* Custom typography */
+.prose-custom {
+    @apply text-gray-600 leading-relaxed;
+}
+
+.prose-custom h1 {
+    @apply text-4xl font-bold text-gray-900 mb-8;
+}
+
+.prose-custom h2 {
+    @apply text-2xl font-semibold text-gray-800 mb-4;
+}
+
+.prose-custom p {
+    @apply mb-4;
+}
+
+.prose-custom ul {
+    @apply list-disc list-inside mb-4;
+}
+
+.prose-custom li {
+    @apply mb-2;
+}
+
+/* Custom responsive utilities */
+@media (max-width: 640px) {
+    .container-custom {
+        @apply px-4;
+    }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+    .container-custom {
+        @apply px-6;
+    }
+}
+
+@media (min-width: 1025px) {
+    .container-custom {
+        @apply px-8;
+    }
+}
+
+/* Navigation styles */
+nav {
+    border-bottom: 1px solid #e5e7eb;
+    position: relative;
+    z-index: 1000;
+}
+
+/* Mobile menu button styles */
+#mobile-menu-button {
+    position: relative;
+    z-index: 1001;
+}
+
+/* Mobile menu styles */
+#mobile-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    z-index: 1000;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Ad container styles */
+.ad-container {
+    position: relative;
+    margin: 2rem 0;
+    padding: 1rem 0;
+    border-top: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.ad-label {
+    position: absolute;
+    top: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 0 0.5rem;
+    font-size: 0.75rem;
+    color: #6b7280;
+}
+
+/* Ensure ads don't overlap with navigation */
+.adsbygoogle {
+    margin: 1rem 0;
+    display: block;
+    min-height: 100px;
+} 
